@@ -2,7 +2,11 @@ import React from 'react'
 
 function Hero({ data }: any) {
     return (
-        <div>{data.title}</div>
+        <div className='w-[200px] '>
+            <p className='text-[50px]'>
+                {data.title}
+            </p>
+        </div>
     )
 }
 

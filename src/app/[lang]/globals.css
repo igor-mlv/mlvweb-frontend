@@ -3,18 +3,38 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+    --violet-color: #935EFF;
+    --gray-color: #63626B;
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+* {
+    scroll-behavior: smooth;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+h1 {
+    @apply font-inter md:text-[4rem] text-[2.5rem] md:leading-[120%] leading-[3rem] text-white
+}
+
+h2 {
+    @apply font-inter md:text-[4rem] text-[2.5rem] leading-[120%] text-white
+}
+
+h3 {
+    @apply font-inter md:text-[2.5rem] text-[1.5rem] leading-[120%] text-white
+}
+
+h4 {
+    @apply font-inter font-light md:text-[2.5rem] text-[1.5rem] leading-[120%] text-white
+}
+
+h5 {
+    @apply font-inter md:text-[1.5rem] text-[1rem] leading-[120%] text-white
+}
+
+h6 {
+    @apply font-inter text-[1.125rem] leading-[120%] text-violet
+}
+
+p {
+    @apply font-inter font-light md:text-[2.5rem] text-[1.5rem] leading-[120%] text-white
 }

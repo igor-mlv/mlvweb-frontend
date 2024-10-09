@@ -1,10 +1,20 @@
-import createNextIntlPlugin from 'next-intl/plugin';
-
-const withNextIntl = createNextIntlPlugin('./src/app/i18n/request.ts');
-
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-    reactStrictMode: true,
-};
 
-export default withNextIntl(nextConfig);
+const nextConfig = {
+    images: {
+        remotePatterns: [
+            {
+                protocol: 'http',
+                hostname: 'localhost',
+                port: '1338',
+                pathname: '/uploads/**',
+            },
+            {
+                protocol: 'https',
+                hostname: 'images.pexels.com',
+            }
+        ],
+    },
+}
+
+export default nextConfig;
