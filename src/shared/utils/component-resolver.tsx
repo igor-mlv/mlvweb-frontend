@@ -3,11 +3,11 @@ import { ReactElement, lazy, createElement, Suspense } from 'react';
 
 export default function componentResolver(section: any, index: number): ReactElement {
 
-    // Component names do look like 'category.component-name' => lowercase and kebap case
+    // Component names do look like 'home-page-components.hero' => lowercase and kebap case
     const names: string[] = section.__component.split('.')
 
-    // Get category name
-    //const category = names[0]
+    // Get page name
+    const pageName = names[0]
 
     // Get component name
     const component = names[1]
@@ -23,7 +23,7 @@ export default function componentResolver(section: any, index: number): ReactEle
     })
 
     // Use react lazy loading to import the module. By convention: The file name needs to match the name of the component (what is a good idea)
-    const componentUI = lazy(() => import(`../components/${componentName}`))
+    const componentUI = lazy(() => import(`../components/${pageName}/${componentName}`))
 
     // Create react element. The 'type' argument needs to be a FunctionComponent, not a string
     const reactElement = createElement(componentUI, { data: section, key: index })

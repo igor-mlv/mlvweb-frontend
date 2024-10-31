@@ -23,7 +23,11 @@ export default function RootLayout({
   return (
     <html lang={params.lang} className={`${interTight.variable} ${varelaRound.variable}`}>
       <body>
-        {children}
+        <main className='w-full flex justify-center overflow-hidden bg-background'>
+          <div className="w-full max-w-global-container min-w-global-container">
+            {children}
+          </div>
+        </main>
       </body>
     </html>
   );

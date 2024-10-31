@@ -26,7 +26,7 @@ import { i18n } from "../../../i18n.config";
 
 export default async function RootRoute({ params }: { params: { lang: string } }) {
   try {
-    const page = await getPageBySlug('home-page', params.lang)
+    const page = await getPageBySlug('home', params.lang)
     if (page.error && page.error.status == 401)
       throw new Error(
         'Missing or invalid credentials. Have you created an access token using the Strapi admin panel? http://localhost:1337/admin/'
